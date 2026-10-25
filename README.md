@@ -11,6 +11,8 @@ an interactive execution ending. Requires defeating the opponent to win.
 
 这是非官方同人作品，未获 CD PROJEKT RED、TRIGGER、Netflix 或相关权利人的认可或背书。角色与世界观权利归各自权利人；此仓库不授予相关角色或品牌的使用许可。
 
+**许可证 / License:** 原创代码采用 [MIT](LICENSE)；角色、品牌、美术和剧情内容不在 MIT 授权范围内。Rajdhani 字体保留 SIL OFL 1.1。完整范围见 [NOTICES.md](NOTICES.md)。Original code is MIT-licensed; franchise elements, artwork and narrative content are excluded. The bundled font remains under SIL OFL 1.1. See the notices for details.
+
 ## 打开
 
 - 推荐直接用现代浏览器打开 `丽贝卡-最后一枪-v6.html`。9 个脚本、5 张角色/场景 PNG 和字体均已内嵌，可单独复制，无需联网或安装。

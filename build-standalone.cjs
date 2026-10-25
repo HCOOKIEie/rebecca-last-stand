@@ -12,6 +12,9 @@ for(const name of ['engine.js','smasher-mode.js','sprites.js','effects.js','expa
   scripts+='<script>\n'+embed(read(name)).replace(/<\/script/gi,'<\\/script')+'\n</script>\n';
 }
 html=html.replace('</body>',()=>scripts+'</body>');
+// Preserve the code license, asset exclusions and embedded font's OFL notice.
+const notices=['LICENSE','NOTICES.md','assets/Rajdhani-OFL.txt'].map(name=>name+'\n\n'+read(name)).join('\n\n');
+html=html.replace('<!doctype html>',()=>'<!doctype html>\n<!--\n'+notices.replace(/-->/g,'--&gt;')+'\n-->');
 // Preserve saved launcher paths while shipping the V6 standalone entry point.
 for(const name of ['丽贝卡-最后一枪-v6.html','丽贝卡-最后一枪-v5.html','丽贝卡-最后一枪-v4.html','丽贝卡-最后一枪-v3.1.html','丽贝卡-最后一枪-v3.html','丽贝卡-最后一枪-v2.html','丽贝卡-最后一闪.html']){
   fs.writeFileSync(path.join(__dirname,name),html);

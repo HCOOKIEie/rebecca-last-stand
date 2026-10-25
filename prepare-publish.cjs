@@ -5,7 +5,7 @@ const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypt
 const root=__dirname,out=path.join(root,'output','publish');
 const runtime=['engine.js','smasher-mode.js','sprites.js','effects.js','expansion.js','execution-fx.js','descent.js','audio.js','game.js'];
 const assets=['corpo-plaza-v2.png','corpo-undercroft-v5.png','rebecca-atlas-v2.png','smasher-atlas-v2.png','smasher-finish-v6.png','Rajdhani-SemiBold.ttf','Rajdhani-OFL.txt','icon.svg','ART_DIRECTION.md','ART_DIRECTION_V2.md','ART_DIRECTION_V5.md','ART_DIRECTION_V6.md'];
-const sourceFiles=['index.html','styles.css',...runtime,'package.json','build-standalone.cjs','prepare-publish.cjs','server.cjs','README.md','PRODUCT.md','DESIGN.md','DIRECTION.md','PUBLISHING.md','.gitignore','.nojekyll','开始游戏.cmd',...assets.map(n=>'assets/'+n),'tests/engine.test.cjs','tests/smasher-mode.test.cjs'];
+const sourceFiles=['index.html','styles.css',...runtime,'package.json','build-standalone.cjs','prepare-publish.cjs','server.cjs','README.md','LICENSE','NOTICES.md','PRODUCT.md','DESIGN.md','DIRECTION.md','PUBLISHING.md','.gitignore','.nojekyll','开始游戏.cmd',...assets.map(n=>'assets/'+n),'tests/engine.test.cjs','tests/smasher-mode.test.cjs'];
 function write(name,content){const p=path.join(out,name);fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,content);return p;}
 for(const name of sourceFiles)write('github/'+name,fs.readFileSync(path.join(root,name)));
 const standalone=fs.readFileSync(path.join(root,'丽贝卡-最后一枪-v6.html'));

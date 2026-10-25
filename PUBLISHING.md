@@ -31,6 +31,13 @@ it contains no sampled music, voice acting or audio from the anime/game.
 
 ## Attribution
 
+Original code is licensed under MIT; include `LICENSE` and `NOTICES.md` in
+source distributions. Characters, franchise elements, artwork and narrative
+content are excluded from that code license. Rajdhani remains under SIL OFL
+1.1; preserve `assets/Rajdhani-OFL.txt`. The standalone builder embeds all
+three notices so the license information accompanies its embedded code and
+font. The complete game and its artwork are not wholly MIT-licensed.
+
 This is an unofficial fan work, not approved or endorsed by CD PROJEKT RED,
 TRIGGER, Netflix or other associated rights holders. Character and franchise
 rights belong to their respective owners. No franchise license is granted by
