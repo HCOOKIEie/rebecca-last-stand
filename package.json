@@ -1,0 +1,12 @@
+{
+  "name": "rebecca-last-stand",
+  "version": "6.0.0",
+  "private": true,
+  "description": "丽贝卡：最后一枪 — 双角色操纵、互动处决的 2D 像素同人 Boss 战",
+  "scripts": {
+    "start": "node server.cjs",
+    "build": "node build-standalone.cjs",
+    "check": "node --check game.js && node --check engine.js && node --check smasher-mode.js && node --check sprites.js && node --check effects.js && node --check expansion.js && node --check execution-fx.js && node --check descent.js && node --check audio.js && node --check server.cjs && node --check build-standalone.cjs",
+    "test": "node --test --test-isolation=none tests/engine.test.cjs tests/smasher-mode.test.cjs"
+  }
+}
