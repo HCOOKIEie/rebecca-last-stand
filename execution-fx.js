@@ -45,8 +45,8 @@ window.ExecutionFX=(()=>{
       label(c,'互动处决',x-87,y+27,16,'#f8f3ad','left');
       label(c,'最后一枪',x+128,y+27,11,'#a8c9ca','right');
     }else{
-      label(c,d.ready?'靠近重锤':'目标失能 · 正在跪倒',x,y+20,14,d.ready?'#c8e9e9':'#9bb9c2');
-      label(c,d.ready?'靠近后按 E 互动处决':'义体驱动离线',x,y+35,10,'#91abb7');
+      label(c,d.ready?'靠近重锤':'重锤失能 · 等他跪稳',x,y+20,14,d.ready?'#c8e9e9':'#9bb9c2');
+      label(c,d.ready?'靠近后按 E 处决':'跪稳后才能处决',x,y+35,10,'#91abb7');
     }
     if(d.ready){
       line(c,b.x-27,b.y+3,b.x+27,b.y+3,near?'#f4ee70':'#7d9ba9',2);

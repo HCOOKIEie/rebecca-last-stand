@@ -35,8 +35,8 @@
           <div class="player-hud"><div class="hud-label"><b id="player-name">REBECCA</b><span id="life-text">04 / 04</span></div><div class="health" id="health"><i></i><i></i><i></i><i></i><i></i></div><div class="dash-track"><span id="dash-fill"></span></div><div class="dash-caption" id="dash-label">闪避就绪 / SHIFT</div></div>
           <div class="boss-hud"><div class="boss-name"><span id="boss-name-label">亚当·重锤 <b>ADAM SMASHER</b></span><span id="boss-percent">100%</span></div><div class="boss-track"><div id="boss-fill"></div></div><div id="phase-label">01 / 装甲完整</div><div class="boss-parts" role="group" aria-label="攻击部位，可按 Q 切换"><button data-target="core" aria-pressed="true">躯干</button><button data-target="launcher" aria-pressed="false">导弹架 100%</button><button data-target="legs" aria-pressed="false">腿甲 100%</button><span>Q 切换</span></div></div>
           <div class="score-hud"><div class="hud-label">STREET CRED</div><div id="score">000000</div><div class="combat-time"><span id="timer">00.0</span> <small>SEC</small></div></div>
-          <div class="counter-hud" id="counter-hud"><span id="combo">反击系统待命</span><b id="counter-label">闪避 → 反击</b></div>
-          <div class="weapon-hud"><div class="weapon-name"><b id="weapon-title">GUTS</b> <span id="weapon-subtitle">动能霰弹枪</span></div><div class="ammo"><strong id="ammo">06</strong><span id="ammo-capacity">/ 06</span><b id="weapon-state">已就绪</b></div><div class="ammo-track" id="ammo-track"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="weapon-keys" id="weapon-keys">J 射击 <span>K 重霰弹</span> R 换弹</div></div>
+          <div class="counter-hud" id="counter-hud"><span id="combo">等待反击机会</span><b id="counter-label">闪避 → 反击</b></div>
+          <div class="weapon-hud"><div class="weapon-name"><b id="weapon-title">GUTS</b> <span id="weapon-subtitle">动能霰弹枪</span></div><div class="ammo"><strong id="ammo">06</strong><span id="ammo-capacity">/ 06</span><b id="weapon-state">就绪</b></div><div class="ammo-track" id="ammo-track"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="weapon-keys" id="weapon-keys">J 射击 <span>K 重霰弹</span> R 换弹</div></div>
           <div class="smasher-abilities hidden" id="smasher-abilities" role="group" aria-label="亚当重锤武装与冷却">
             <button data-smasher-ability="cannon" aria-label="J 臂炮"><kbd>J</kbd><b>臂炮</b><span class="ability-state">就绪</span></button>
             <button data-smasher-ability="barrage" aria-label="K 导弹"><kbd>K</kbd><b>导弹</b><span class="ability-state">就绪</span></button>
@@ -54,28 +54,28 @@
               <button data-mode="rebecca" aria-pressed="true" class="selected"><span>丽贝卡</span><small>绝境反击</small></button>
               <button data-mode="smasher" aria-pressed="false"><span>亚当重锤</span><small>全武装接管</small></button>
             </div>
-            <p class="mission-copy" id="intro-mission">躲开重锤下砸，抓住落地破绽。<br>用「铁胆」击穿他的装甲，靠近完成最后一枪。</p>
-            <div class="objective"><span>任务目标</span><b id="intro-objective">击败亚当·重锤，互动处决</b></div>
+            <p class="mission-copy" id="intro-mission">先躲开下砸，趁他落地开枪。<br>用「铁胆」打穿装甲，再靠近按 E 处决。</p>
+            <div class="objective"><span>任务目标</span><b id="intro-objective">击败亚当·重锤，完成处决</b></div>
             <div class="difficulty" role="group" aria-label="选择难度"><button data-difficulty="easy" aria-pressed="false">剧情<small>5 格生命</small></button><button data-difficulty="normal" aria-pressed="true">标准<small>4 格生命</small></button><button data-difficulty="hard" aria-pressed="false">高危<small>3 格生命</small></button><button data-difficulty="nightmare" aria-pressed="false">噩梦<small>一击致命</small></button></div>
             <div class="difficulty-details"><span id="difficulty-summary">标准 / 装甲 4000</span><button id="customize-difficulty" aria-haspopup="dialog">自定义参数</button></div>
-            <button class="primary" id="start" disabled>连接素材中… <svg class="ui-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M6 5h13v13"/></svg></button>
+            <button class="primary" id="start" disabled>载入中… <svg class="ui-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M6 5h13v13"/></svg></button>
             <div class="start-hint" id="start-hint">正在加载角色与场景</div>
           </div>
           <div class="character-caption" id="character-caption">丽贝卡 <span>REBECCA / SOLO</span><small>GUTS 已上膛 · 6 发</small></div><div class="stage-stamp">NIGHT CITY, 2076<br><b>CORPO PLAZA</b></div>
         </div>
-        <div class="screen modal hidden" id="pause-screen"><div class="modal-card"><h2>连接已挂起</h2><p>深呼吸。下一枪，打回去。</p><button class="secondary" id="pause-settings">调整重锤难度</button><button class="primary" id="resume">继续战斗 <svg class="ui-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M6 5h13v13"/></svg></button><button class="secondary" id="pause-home">返回主菜单</button><span class="modal-hint">P / ESC 继续</span></div></div>
-        <div class="screen modal hidden" id="result-screen"><div class="modal-card result-card"><h2 id="result-title">连接中断</h2><div class="mission-tag" id="result-tag">FLATLINE</div><p id="result-description">这座城市，还欠她一个明天。</p><div class="result-stats"><div><span>作战时间</span><strong id="result-time">00.0<small>s</small></strong></div><div><span>街头声望</span><strong id="result-score">0000</strong></div><div><span>完美闪避</span><strong id="result-dodges">00</strong></div></div><div class="record" id="record-message"></div><button class="primary" id="retry">重新接入 <svg class="ui-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M6 5h13v13"/></svg></button><button class="secondary hidden" id="replay-ending">重播结局通讯</button><button class="secondary" id="result-home">返回主菜单</button></div></div>
+        <div class="screen modal hidden" id="pause-screen"><div class="modal-card"><h2>战斗已暂停</h2><p>歇口气，再打。</p><button class="secondary" id="pause-settings">调整重锤难度</button><button class="primary" id="resume">继续战斗 <svg class="ui-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M6 5h13v13"/></svg></button><button class="secondary" id="pause-home">返回主菜单</button><span class="modal-hint">P / ESC 继续</span></div></div>
+        <div class="screen modal hidden" id="result-screen"><div class="modal-card result-card"><h2 id="result-title">连接中断</h2><div class="mission-tag" id="result-tag">FLATLINE</div><p id="result-description">等落点锁定再闪避，趁重锤落地开枪。</p><div class="result-stats"><div><span>作战时间</span><strong id="result-time">00.0<small>s</small></strong></div><div><span>街头声望</span><strong id="result-score">0000</strong></div><div><span>完美闪避</span><strong id="result-dodges">00</strong></div></div><div class="record" id="record-message"></div><button class="primary" id="retry">再试一次 <svg class="ui-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M6 5h13v13"/></svg></button><button class="secondary hidden" id="replay-ending">重播结局通讯</button><button class="secondary" id="result-home">返回主菜单</button></div></div>
         <div class="ending-controls hidden" id="ending-controls"><span id="ending-caption" role="status" aria-live="polite"></span><button id="skip-ending" disabled>跳过演出 / ENTER</button></div>
         <div class="screen modal settings-screen hidden" id="settings-screen" role="dialog" aria-modal="true" aria-labelledby="settings-title">
           <div class="modal-card settings-card">
             <div class="settings-heading"><h2 id="settings-title">重锤难度</h2><button id="settings-close" aria-label="关闭难度设置">关闭</button></div>
-            <p id="settings-context">选择预设，或单独调整重锤的战斗参数。</p>
+            <p id="settings-context">选一档难度，也可以单独调参数。</p>
             <div class="settings-presets" role="group" aria-label="难度预设"><button data-setting-preset="easy" aria-pressed="false">剧情</button><button data-setting-preset="normal" aria-pressed="false">标准</button><button data-setting-preset="hard" aria-pressed="false">高危</button><button data-setting-preset="nightmare" aria-pressed="false">噩梦</button></div>
             <div class="settings-summary" id="settings-summary" aria-live="polite"></div>
-            <label class="setting-row" for="boss-hp"><span>重锤装甲 <output id="boss-hp-value" for="boss-hp">4000</output></span><input id="boss-hp" type="range" min="1000" max="10000" step="250" value="4000"><small>数值越高，需要更多次反击</small></label>
+            <label class="setting-row" for="boss-hp"><span>重锤装甲 <output id="boss-hp-value" for="boss-hp">4000</output></span><input id="boss-hp" type="range" min="1000" max="10000" step="250" value="4000"><small>装甲越厚，需要命中的次数越多</small></label>
             <label class="setting-row" for="boss-pace"><span>攻击速度 <output id="boss-pace-value" for="boss-pace">100%</output></span><input id="boss-pace" type="range" min="65" max="160" step="5" value="100"><small>影响攻击间隔、冲刺与弹丸速度</small></label>
-            <label class="setting-row" for="boss-warning"><span>预警时长 <output id="boss-warning-value" for="boss-warning">100%</output></span><input id="boss-warning" type="range" min="65" max="160" step="1" value="100"><small>数值越高，留给你的反应时间越长</small></label>
-            <label class="arsenal-option"><input type="checkbox" id="boss-arsenal" checked><span>全武装模式<small>加入导弹齐射和后期二连下砸；各模式均有二阶段</small></span></label>
+            <label class="setting-row" for="boss-warning"><span>预警时长 <output id="boss-warning-value" for="boss-warning">100%</output></span><input id="boss-warning" type="range" min="65" max="160" step="1" value="100"><small>预警越长，反应时间越多</small></label>
+            <label class="arsenal-option"><input type="checkbox" id="boss-arsenal" checked><span>全武装模式<small>开启导弹齐射和后期二连下砸；所有难度都有二阶段</small></span></label>
             <div class="settings-actions"><button class="primary" id="settings-apply">应用设置</button><button class="secondary" id="settings-cancel">取消</button></div>
           </div>
         </div>
@@ -87,7 +87,7 @@
     </section>
     <div class="touch-controls" aria-label="触屏操作"><div><button data-hold="left" aria-label="向左移动">←</button><button data-hold="right" aria-label="向右移动">→</button></div><div><button data-action="reload">换弹</button><button data-hold="shoot">射击</button><button data-hold="heavy">重击</button><button data-action="jump">跳跃</button><button data-action="dash" class="touch-dash">闪避</button></div></div>
     <section class="controls" id="controls-guide" aria-label="操作指南"><div><kbd>A</kbd><kbd>D</kbd><span>移动</span></div><div><kbd>SPACE</kbd><span>跳跃</span></div><div><kbd class="accent">SHIFT</kbd><span>闪避</span></div><div><kbd>J</kbd><span>射击</span></div><div><kbd>K</kbd><span>重霰弹</span></div><div><kbd>Q</kbd><span>切换部位</span></div><div><kbd>R</kbd><span>换弹</span></div><div><kbd>E</kbd><span>处决</span></div><div><kbd>P</kbd><span>暂停</span></div></section>
-    <div class="tip-row"><b id="tips-title">进攻连招</b><p id="tips-copy"><em>SHIFT＋J</em> 滑铲射击 · <em>跳跃＋K</em> 空中重霰弹 · 近距离 <em>K</em> 打断蓄力（4 秒间隔）。按 <em>Q / 1、2、3</em> 选择攻击部位。重锤跪倒后，靠近按 <em>E</em> 处决；橙色裂纹将塌陷，跳跃或滑步跨过缺口。</p><span>DON’T FLATLINE.</span></div>
+    <div class="tip-row"><b id="tips-title">进攻连招</b><p id="tips-copy"><em>SHIFT＋J</em> 滑铲射击 · <em>跳跃＋K</em> 空中重霰弹 · 近距离 <em>K</em> 可打断蓄力（每 4 秒一次）。<em>Q / 1、2、3</em> 切换攻击部位。重锤跪稳后，靠近按 <em>E</em> 处决。看到橙色裂纹就离开，用跳跃或滑步跨过缺口。</p><span>DON’T FLATLINE.</span></div>
   </main>
   <footer><span>CYBERPUNK: EDGERUNNERS / FAN-MADE ARCADE</span><span>自制像素素材 · 原创合成音效 · 架空分支结局</span></footer>
 </div>

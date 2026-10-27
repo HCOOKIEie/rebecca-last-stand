@@ -193,7 +193,7 @@ window.ExpansionFX=(()=>{
         const k=clamp(b.age/b.duration,0,1),x=clamp(b.x,190,770),stage=k<.28?'装甲过载':k<.62?'限制器解除':'斯安威斯坦上线';
         rect(c,x-164,b.y-226,328,49,'#081522ec');line(c,x-164,b.y-226,x+164,b.y-226,'#97f7c4',2);
         label(c,'SANDEVISTAN // '+stage,x,b.y-208,14,'#e2ffb0');
-        label(c,'接下来：三次冲刺 · 留意地面锁定路径',x,b.y-190,11,'#c5e9de');
+        label(c,'连冲三次 · 看清地面锁定线',x,b.y-190,11,'#c5e9de');
         rect(c,x-164,b.y-179,328*k,2,'#baff87');
       }return;
     }
@@ -215,7 +215,7 @@ window.ExpansionFX=(()=>{
       const x=clamp((l+r)/2,165,795),remain=Math.max(0,b.duration-b.age);
       rect(c,x-153,floor-214,306,42,'#081321f2');line(c,x-153,floor-214,x+153,floor-214,color,2);
       label(c,`${4-b.sandiLeft} / 3  ${rushing?'冲刺中':locked?'路径已锁定':b.controlled?'追踪目标':'追踪中'}${rushing?'':`  ${remain.toFixed(1)}s`}`,x,floor-197,13,color);
-      label(c,b.controlled?(rushing?'正在突进 · 命中丽贝卡造成伤害':'锁定后自动突进 · 连续三次攻击'):'跳起越过 · 或迎面闪避',x,floor-180,10,'#e5f0ec');
+      label(c,b.controlled?(rushing?'正在冲刺 · 撞中丽贝卡可造成伤害':'锁定后自动冲刺 · 共三次'):'跳过冲刺 · 或迎面闪避',x,floor-180,10,'#e5f0ec');
       if(!rushing)rect(c,x-153,floor-173,306*clamp(remain/b.duration,0,1),2,color);
     }
     c.restore();
@@ -259,7 +259,7 @@ window.ExpansionFX=(()=>{
     if(stage<3){
       rect(c,58,67,400,116,'#101824ed');line(c,58,67,458,67,'#72e9df',2);rect(c,58,67,3,116,'#72e9df');
       lucy(c,73,85,65);label(c,'加密通讯 / LUCY',154,91,12,'#7dece4','left');
-      const text=stage===0?['丽贝卡？……听得到吗？','你的生命信号还在。']:stage===1?['听得到，露西。','这回，我们一起离开。']:['撤离路线已打开。','别回头，我在出口等你。'];
+      const text=stage===0?['丽贝卡？听得到吗？','我看到你的生命信号了。']:stage===1?['听着呢，露西。','走吧，这回一起出去。']:['撤离的路通了。','别回头，我在出口等你。'];
       label(c,stage===1?'REBECCA → LUCY':'LUCY → REBECCA',154,111,10,'#9aaebe','left');
       text.forEach((s,i)=>label(c,s,154,137+i*21,14,stage===1?'#f6f3a4':'#e8f4f5','left'));
       for(let i=0;i<10;i++)rect(c,74+i*6,159,3,reduced?6:3+noise(i+Math.floor(t*9))*9,'#6adfd6');
@@ -268,8 +268,8 @@ window.ExpansionFX=(()=>{
       c.fillStyle='#dce7e5';c.beginPath();c.arc(753,128,47,0,Math.PI*2);c.fill();
       rect(c,726,107,14,5,'#b5c9d0');rect(c,761,140,21,5,'#aebfcb');rect(c,741,156,9,3,'#aebfcb');
       label(c,'ANOTHER TOMORROW_',480,206,35,'#efffbe');
-      label(c,'这座城市，没能夺走所有明天。',480,240,17,'#e1edf2');
-      label(c,'彩蛋结局 / 月球不是一个人的终点',480,272,12,'#80dbdf');
+      label(c,'丽贝卡活着走出了公司广场。',480,240,17,'#e1edf2');
+      label(c,'彩蛋结局 / 月球，也可以一起去',480,272,12,'#80dbdf');
     }
     c.restore();label(c,'ONE MORE SHOT // ALTERNATE TIMELINE',480,527,11,'#8ba6bd');
   }
